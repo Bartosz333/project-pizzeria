@@ -60,6 +60,7 @@
       thisProduct.renderInMenu();
       console.log('new Product:', thisProduct);
     }
+
     renderInMenu(){
       const thisProduct = this;
       const generatedHTML = templates.menuProduct(thisProduct.data);//generate HTML based on template
@@ -76,7 +77,7 @@
       console.log('thisApp.data:', thisApp.data);
 
       for(let productData in thisApp.data.products){
-        new Product(productData in thisApp.data.products[productData]);
+        new Product(productData, thisApp.data.products[productData]);
       }
     },
     initData: function(){
