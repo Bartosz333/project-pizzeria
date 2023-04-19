@@ -212,10 +212,12 @@
           }
         }
       }
-      /* multiply price by amount */
-      price *= thisProduct.amountWidget.value;
       // add new property "priceSingle" to thisProduct
       thisProduct.priceSingle = price;
+
+      /* multiply price by amount */
+      price *= thisProduct.amountWidget.value;
+      
       // update calculated price in the HTML
       thisProduct.priceElem.innerHTML = price;
       thisProduct.price = price;
