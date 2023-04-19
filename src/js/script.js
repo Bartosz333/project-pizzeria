@@ -65,8 +65,8 @@
   const settings = {
     amountWidget: {
       defaultValue: 1,
-      defaultMin: 1,
-      defaultMax: 9,
+      defaultMin: 0,
+      defaultMax: 10,
     },
     cart: {
       defaultDeliveryFee: 20,
@@ -288,7 +288,7 @@
       const thisWidget = this;
 
       thisWidget.getElements(element);
-      thisWidget.setValue(settings.amountWidget.defaultValue);
+      thisWidget.setValue(thisWidget.input.value || settings.amountWidget.defaultValue);
       thisWidget.initActions();
 
       //console.log('AmountWidget:', thisWidget);
@@ -406,7 +406,7 @@
       const generatedDOM = utils.createDOMFromHTML(generatedHTML);
       thisCart.dom.productList.appendChild(generatedDOM);
 
-      thisCart.products.push(new CartProduct(menuProduct,generatedDOM));
+      thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
       console.log('thisCart.products', thisCart.products);
 
       thisCart.update();
@@ -424,7 +424,7 @@
         thisCart.subtotalPrice += cartProduct.price;
       }
       if (thisCart.totalNumber !== 0) {
-        thisCart.totalPrice = thisCart.subtotalPrice + thisCart.deliveryFee;
+        thisCart.totalPrice = thisCart.deliveryFee + thisCart.subtotalPrice;
       } else {
         thisCart.totalPrice = 0;
         thisCart.deliveryFee = 0;
@@ -442,7 +442,7 @@
     remove(cartProduct) {
       const thisCart = this;
 
-      cartProduct.dom.wrapper.remove(cartProduct);
+      cartProduct.dom.wrapper.remove();
 
       const indexOfProduct = thisCart.products.indexOf(cartProduct);
       thisCart.products.splice(indexOfProduct, 1);
