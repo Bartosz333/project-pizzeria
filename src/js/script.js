@@ -122,7 +122,7 @@
       thisProduct.dom.form = thisProduct.element.querySelector(
         select.menuProduct.form
       );
-      thisProduct.formInputs = thisProduct.dom.form.querySelectorAll(
+      thisProduct.dom.formInputs = thisProduct.dom.form.querySelectorAll(
         select.all.formInputs
       );
       thisProduct.dom.cartButton = thisProduct.element.querySelector(
@@ -171,18 +171,18 @@
       const thisProduct = this;
       //console.log('initOrderForm');
 
-      thisProduct.form.addEventListener('submit', function (event) {
+      thisProduct.dom.form.addEventListener('submit', function (event) {
         event.preventDefault();
         thisProduct.processOrder();
       });
 
-      for (let input of thisProduct.formInputs) {
+      for (let input of thisProduct.dom.formInputs) {
         input.addEventListener('change', function () {
           thisProduct.processOrder();
         });
       }
 
-      thisProduct.cartButton.addEventListener('click', function (event) {
+      thisProduct.dom.cartButton.addEventListener('click', function (event) {
         event.preventDefault();
         thisProduct.processOrder();
         thisProduct.addToCart();
@@ -194,7 +194,7 @@
       //console.log('processOrder');
 
       // covert form to object structure e.g. { sauce: ['tomato'], toppings: ['olives', 'redPeppers']}
-      const formData = utils.serializeFormToObject(thisProduct.form);
+      const formData = utils.serializeFormToObject(thisProduct.dom.form);
       //console.log('formData', formData);
 
       // set price to default price
@@ -286,7 +286,7 @@
     prepareCartProductParams() {
       const thisProduct = this;
 
-      const formData = utils.serializeFormToObject(thisProduct.form);
+      const formData = utils.serializeFormToObject(thisProduct.dom.form);
       const params = {};
 
       // for very category (param)
