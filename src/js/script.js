@@ -520,18 +520,19 @@
 
     sendOrder() {
       const thisCart = this;
-
+      console.log(thisCart);
       const url = settings.db.url + '/' + settings.db.orders;
 
       const payload = {
         address: thisCart.dom.address.value,
         phone: thisCart.dom.phone.value,
-        totalPrice: thisCart.dom.totalPrice,
-        subtotalPrice: thisCart.dom.subtotalPrice,
-        totalNumber: thisCart.dom.totalNumber,
-        deliveryFee: thisCart.dom.deliveryFee,
+        totalPrice: thisCart.totalPrice,
+        subtotalPrice: thisCart.subtotalPrice,
+        totalNumber: thisCart.totalNumber,
+        deliveryFee: thisCart.deliveryFee,
         products: [],
       };
+      console.log('payload', payload);
 
       for (let prod of thisCart.products) {
         payload.products.push(prod.getData());
