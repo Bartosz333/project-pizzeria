@@ -6,6 +6,7 @@ class BaseWidget {
     thisWidget.dom.wrapper = wrapperElement;
 
     thisWidget.correctValue = initialValue;
+    
   }
 
   get value() {
@@ -26,11 +27,14 @@ class BaseWidget {
       thisWidget.isValid(newValue)
     ) {
       thisWidget.correctValue = newValue;
-      thisWidget.announce();
+      
     }
+    
     thisWidget.renderValue();
 
+
     /**We run the announce method after making sure that the value is correct */
+    thisWidget.announce();
     
   }
 
