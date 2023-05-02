@@ -6,7 +6,6 @@ class BaseWidget {
     thisWidget.dom.wrapper = wrapperElement;
 
     thisWidget.correctValue = initialValue;
-    
   }
 
   get value() {
@@ -21,21 +20,14 @@ class BaseWidget {
     const newValue = thisWidget.parseValue(value); // parseInt converts strings to numbers
 
     /* TODO: Add validation */
-    if (
-      thisWidget.correctValue !== newValue &&
-      !isNaN(newValue) &&
-      thisWidget.isValid(newValue)
-    ) {
+    if (newValue !== thisWidget.correctValue && thisWidget.isValid(newValue)) {
       thisWidget.correctValue = newValue;
-      
     }
-    
-    thisWidget.renderValue();
 
+    thisWidget.renderValue();
 
     /**We run the announce method after making sure that the value is correct */
     thisWidget.announce();
-    
   }
 
   setValue(value) {
