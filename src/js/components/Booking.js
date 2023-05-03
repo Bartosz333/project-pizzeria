@@ -170,6 +170,7 @@ class Booking {
         thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)
       ) {
         table.classList.add(classNames.booking.tableBooked);
+        table.classList.remove(classNames.booking.tableSelected);
       } else {
         table.classList.remove(classNames.booking.tableBooked);
       }
