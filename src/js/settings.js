@@ -44,6 +44,11 @@ export const select = {
     hoursAmount: '.hours-amount',
     tables: '.floor-plan .table',
     allTables: '.floor-plan',
+    starters: '[name= "starter"]',
+    phone: '.order-confirmation [name="phone"]',
+    address: '.order-confirmation [name= "address"]',
+    tableSelected: '.table.selected',
+    form: '.booking-form',
   },
   nav: {
     links: '.main-nav a',
@@ -131,5 +136,7 @@ export const templates = {
   cartProduct: Handlebars.compile(
     document.querySelector(select.templateOf.cartProduct).innerHTML
   ),
-  bookingWidget: Handlebars.compile(document.querySelector(select.templateOf.bookingWidget).innerHTML),
+  bookingWidget: Handlebars.compile(
+    document.querySelector(select.templateOf.bookingWidget).innerHTML
+  ),
 };

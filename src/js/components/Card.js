@@ -124,7 +124,7 @@ class Cart {
 
   sendOrder() {
     const thisCart = this;
-    console.log(thisCart);
+    //console.log(thisCart);
     const url = settings.db.url + '/' + settings.db.orders;
 
     const payload = {
@@ -136,7 +136,7 @@ class Cart {
       deliveryFee: thisCart.deliveryFee,
       products: [],
     };
-    console.log('payload', payload);
+    //console.log('payload', payload);
 
     for (let prod of thisCart.products) {
       payload.products.push(prod.getData());
