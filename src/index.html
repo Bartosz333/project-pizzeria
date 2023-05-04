@@ -17,6 +17,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
     <link rel="stylesheet" href="./vendor/range-slider.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -94,131 +98,144 @@
       </section>
     </div>
     <script id="template-home" type="text/x-handlebars-template">
-      <div class='main'>
-        <div class='main__links'>
-          <a href='#order' class='link-btn'>
-            <div class='link-btn__wrapper'>
-              <p class='main__title'>order online</p>
-              <img src='images/pizza-1.jpg' alt='pizza' />
+      <div class='home-header'>
+        <div class='row-wrapper'>
+          <div class='box'>
+            <img src='./images/home/pizza-1.jpg' />
+            <div class='order-book'>
+              <a href='#order' class='home-btn'><h3>ORDER ONLINE</h3></a>
+              <p>Delicious food delivered to your door</p>
             </div>
-          </a>
-          <a href='#booking' class='link-btn'>
-            <div class='link-btn__wrapper'>
-              <p class='main__title'>book a table</p>
-              <img src='images/pizza-2.jpg' alt='table full of food' />
+          </div>
+          <div class='box'>
+            <img src='./images/home/pizza-2.jpg' />
+            <div class='order-book'>
+              <a href='#booking' class='home-btn'><h3>BOOK A TABLE</h3></a>
+              <p>Enjoy your time in our restaurant</p>
             </div>
-          </a>
+          </div>
         </div>
-        <div class='main__info'>
-          <p class='main__title'>opening hours:</p>
-          <p class='main__subtitle'>tue-sun, 12pm - 12am</p>
+        <div class='bottom-box'>
+          <h3>OPENING HOURS:</h3>
+          <h4 class='open-time'>TUE-SUN, 12 PM - 12 AM</h4>
         </div>
       </div>
-      <div class='main-carousel' data-flickity='{ "autoPlay": true }'>
-        <div class='carousel-cell'>
-          <div class='carousel-cell__image'>
-            <img src='images/pizza-3.jpg' alt='people dining out' />
+      <!--Carousel-->
+      <div class='carousel-wrapper' data-flickity='{ "autoPlay": true }'>
+        <div class='carousel-box'>
+          <div class='carousel-box__image'>
+            <img src='images/home/pizza-3.jpg' alt='eating out' />
           </div>
-          <div class='carousel-cell__description'>
-            <h1>Best service</h1>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p class='italic'>- Maxim Herbert</p>
-          </div>
-        </div>
-        <div class='carousel-cell'>
-          <div class='carousel-cell__image'>
-            <img src='images/pizza-3.jpg' alt='people dining out' />
-          </div>
-          <div class='carousel-cell__description'>
-            <h1>Great venue</h1>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p class='italic'>- Carl Whitworth</p>
+          <div class='carousel-box__info'>
+            <h1>Amazing service!</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              egestas viverra tortor, eu ullamcorper dui imperdiet nec. Nuc sed
+              dolor at elit lobor sodales.</p>
+            <p><i>-Margaret Osborne</i></p>
           </div>
         </div>
-        <div class='carousel-cell'>
-          <div class='carousel-cell__image'>
-            <img src='images/pizza-3.jpg' alt='people dining out' />
+
+        <div class='carousel-box'>
+          <div class='carousel-box__image'>
+            <img src='images/home/pizza-3.jpg' alt='eating out' />
           </div>
-          <div class='carousel-cell__description'>
-            <h1>Good snacks</h1>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p class='italic'>- Ricardo Reyes</p>
+          <div class='carousel-box__info'>
+            <h1>Great venue!</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              egestas viverra tortor, eu ullamcorper dui imperdiet nec. Nuc sed
+              dolor at elit lobor sodales.</p>
+            <p><i>-Margaret Osborne</i></p>
           </div>
         </div>
-        <div class='carousel-cell'>
-          <div class='carousel-cell__image'>
-            <img src='images/pizza-3.jpg' alt='people dining out' />
+
+        <div class='carousel-box'>
+          <div class='carousel-box__image'>
+            <img src='images/home/pizza-3.jpg' alt='eating out' />
           </div>
-          <div class='carousel-cell__description'>
-            <h1>Delicious food</h1>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p class='italic'>- Elara Knapp</p>
+          <div class='carousel-box__info'>
+            <h1>Good snacks!</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              egestas viverra tortor, eu ullamcorper dui imperdiet nec. Nuc sed
+              dolor at elit lobor sodales.</p>
+            <p><i>-Margaret Osborne</i></p>
+          </div>
+        </div>
+
+        <div class='carousel-box'>
+          <div class='carousel-box__image'>
+            <img src='images/home/pizza-3.jpg' alt='eating out' />
+          </div>
+          <div class='carousel-box__info'>
+            <h1>Delicious food!</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              egestas viverra tortor, eu ullamcorper dui imperdiet nec. Nuc sed
+              dolor at elit lobor sodales.</p>
+            <p><i>-Margaret Osborne</i></p>
           </div>
         </div>
       </div>
+
+      <!--Gallery-->
+
       <div class='gallery'>
         <div class='gallery__image'>
           <div class='gallery__image__overlay'>
             <div class='gallery__image__overlay__icons'>
-              <i class='fas fa-solid fa-heart'></i>
-              <i class='fas fa-solid fa-share'></i>
+              <i class='fas fa-heart'></i>
+              <i class='fas fa-share-alt'></i>
             </div>
           </div>
-          <img src='images/pizza-4.jpg' alt='starters' />
+          <img src='images/home/pizza-4.jpg' alt='starters' />
         </div>
         <div class='gallery__image'>
           <div class='gallery__image__overlay'>
             <div class='gallery__image__overlay__icons'>
-              <i class='fas fa-solid fa-heart'></i>
-              <i class='fas fa-solid fa-share'></i>
+              <i class='fas fa-heart'></i>
+              <i class='fas fa-share-alt'></i>
             </div>
           </div>
-          <img src='images/pizza-5.jpg' alt='vegetable dish' />
+          <img src='images/home/pizza-5.jpg' alt='vegetable dish' />
         </div>
         <div class='gallery__image'>
           <div class='gallery__image__overlay'>
             <div class='gallery__image__overlay__icons'>
-              <i class='fas fa-solid fa-heart'></i>
-              <i class='fas fa-solid fa-share'></i>
+              <i class='fas fa-heart'></i>
+              <i class='fas fa-share-alt'></i>
             </div>
           </div>
-          <img src='images/pizza-6.jpg' alt='pizza' />
+          <img src='images/home/pizza-6.jpg' alt='pizza' />
         </div>
         <div class='gallery__image'>
           <div class='gallery__image__overlay'>
             <div class='gallery__image__overlay__icons'>
-              <i class='fas fa-solid fa-heart'></i>
-              <i class='fas fa-solid fa-share'></i>
+              <i class='fas fa-heart'></i>
+              <i class='fas fa-share-alt'></i>
             </div>
           </div>
-          <img src='images/pizza-7.jpg' alt='open sign' />
+          <img src='images/home/pizza-7.jpg' alt='open sign' />
         </div>
         <div class='gallery__image'>
           <div class='gallery__image__overlay'>
             <div class='gallery__image__overlay__icons'>
-              <i class='fas fa-solid fa-heart'></i>
-              <i class='fas fa-solid fa-share'></i>
+              <i class='fas fa-heart'></i>
+              <i class='fas fa-share-alt'></i>
             </div>
           </div>
-          <img src='images/pizza-8.jpg' alt='pizza dough' />
+          <img src='images/home/pizza-8.jpg' alt='pizza dough' />
         </div>
         <div class='gallery__image'>
           <div class='gallery__image__overlay'>
             <div class='gallery__image__overlay__icons'>
-              <i class='fas fa-solid fa-heart'></i>
-              <i class='fas fa-solid fa-share'></i>
+              <i class='fas fa-heart'></i>
+              <i class='fas fa-share-alt'></i>
             </div>
           </div>
-          <img src='images/pizza-9.jpg' alt='shop window' />
+          <img src='images/home/pizza-9.jpg' alt='shop window' />
         </div>
       </div>
-      <div class='gallery-link'>
+      <footer class='gallery-link'>
         <a href='#'>View more on Instagram</a>
-      </div>
+      </footer>
     </script>
 
     <script id="template-cart-product" type="text/x-handlebars-template">
@@ -421,6 +438,7 @@
       </div>
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="./vendor/range-slider.min.js"></script>
     <script src="js/app.js" type="module"></script>

@@ -23,5 +23,4 @@ class Home {
     thisHome.dom.wrapper.innerHTML = generatedHTML;
   }
 }
-
 export default Home;

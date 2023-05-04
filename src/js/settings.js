@@ -74,6 +74,10 @@ export const select = {
     edit: '[href="#edit"]',
     remove: '[href="#remove"]',
   },
+  home: {
+    links: '.home-btn',
+    carousel: '.carousel-wrapper',
+  },
 };
 
 export const classNames = {

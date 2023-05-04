@@ -13,6 +13,17 @@ const app = {
 
     // create new instance of Home class
     thisApp.homePage = new Home(homeWrapper);
+
+    thisApp.homeLinks = document.querySelectorAll(select.home.links);
+
+    for (let link of thisApp.homeLinks) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        const linkHref = link.getAttribute('href').replace('#', '');
+
+        thisApp.activatePage(linkHref);
+      });
+    }
   },
 
   initBooking: function () {
