@@ -1,0 +1,69 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 70px 0;
+  font-family: $font-header;
+  font-weight: $font-normal;
+  letter-spacing: 0.7px;
+  font-size: ($base-size * 2);
+  color: $color-light;
+  text-transform: uppercase;
+  
+  &__links {
+    display: flex;
+    gap: 10px;
+  }
+  
+  &__info {
+    background-color: $color-main;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: $radius;
+  }
+  
+  &__info p {
+    margin: 0;
+  }
+  
+  &__subtitle {
+    font-weight: $font-light;
+  }
+}
+  
+  
+.link-btn {
+  width: 50%;
+  color: $color-light;
+  
+  
+  &__wrapper {
+    max-width: 100%;
+    height: 140px;
+    position: relative;
+  }
+  
+  &__wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: $radius;
+  }
+
+  &_wrapper:hover p {
+    transform: translate(-50%, -50%);
+  }
+  
+  &__wrapper p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    transition: transform 0.3s ease-out;
+  }
+  
+}
