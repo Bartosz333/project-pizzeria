@@ -1,6 +1,6 @@
-# project-pizzeria 
+# project-pizzeria
 
-http://project-pizzeria.bartosz333.repl.co/
+https://project-pizzeria--bartosz333.repl.co/
 
 ## version 1.0.0
 
